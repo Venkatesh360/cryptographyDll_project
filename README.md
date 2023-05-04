@@ -45,7 +45,7 @@ The function then encodes the key in hexadecimal and prints it to the console.
 #### RSA key generation
 The function generates a 2048-bit RSA key pair using the Crypto++ library. The function uses an auto-seeded random number generator to generate a private key, and then derives the corresponding public key. The function prints the components of the private and public keys to the console.
 
-#### scrypt
+#### SCRYPT
 The function that implements the scrypt key derivation function. The function takes a password and a salt as input, and uses the scrypt algorithm to derive a 32-byte key. 
 The function then encodes the key in hexadecimal and prints it to the console.
 
@@ -82,6 +82,23 @@ This function generates a random key and nonce using the AutoSeededRandomPool fu
 #### AES128_CTR_decryptor
 This function takes a ciphertext, key, and nonce as input. It first converts the key and nonce from string format to binary format using an array sink. It then sets up a CTR decryption object with the key and nonce, decrypts the ciphertext using a stream transformation filter, and prints the decrypted text.
 
+#### RSA_encryption
+This function takes in a public key file as input, sets up a plaintext message, encrypts the message using RSA encryption with the provided public key, and outputs the resulting ciphertext in Base64 encoding.
+
+#### RSA_decryption
+This function takes in a private key file as input, sets up a ciphertext message (which should be in Base64 encoding), decrypts the message using RSA decryption with the provided private key, and outputs the resulting plaintext.
+
+#### BLOWFISH_encryption
+This function takes in a plaintext message and a key, sets up a Blowfish encryption object with the provided key, encrypts the plaintext message using the object in CBC mode, and outputs the resulting ciphertext in hexadecimal encoding.
+
+#### BLOWFISH_decryption
+This function takes in a ciphertext message (in hexadecimal encoding) and a key, sets up a Blowfish decryption object with the provided key, decrypts the ciphertext message using the object in CBC mode, and outputs the resulting plaintext.
+
+#### TWOFISH_encryptor
+This function takes in a plaintext message and a key, sets up a Twofish encryption object with the provided key, encrypts the plaintext message using the object in CBC mode with a fixed initialization vector, and outputs the resulting ciphertext.
+
+#### TWOFISH_decryptor
+This function takes in a ciphertext message and a key, sets up a Twofish decryption object with the provided key, decrypts the ciphertext message using the object in CBC mode with the same fixed initialization vector, and outputs the resulting plaintext.
 
 ## Hashing Module
 #### SHA_256_Hashing function
